@@ -55,16 +55,16 @@ public class CreditCard
       evencheck = evencheck + evenar[i];
     }
     totalcheck = (evencheck * 2) + oddcheck;
-    System.out.println(totalcheck);
+
     if (totalcheck%10 == 0)
     {
       valid = true;
-      return "true";
+      return "Yes";
     }
     else 
     {
       valid = false;
-      return "false";
+      return "No";
     }
     
     

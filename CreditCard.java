@@ -6,6 +6,8 @@ public class CreditCard
   boolean valid = true;
   String verify(String num)
   {
+    if (num.length() < 13 || num.length() > 16)
+      valid = false;
     String oddsum = "";
     String evensum = "";
     String oddstr = num;
@@ -16,9 +18,12 @@ public class CreditCard
      oddstr = oddstr.substring(0,oddstr.length()-1); 
     }
     String tempstring = oddsum;
-    for (int i = 0; i < oddsum.length(); i++){
-      oddsum = oddsum.substring(i*2,i*2+1); 
+    oddsum = "";
+    for (int j = 0; j < tempstring.length(); j++){ 
+      oddsum = oddsum + tempstring.substring(j*2,j*2+1); 
       System.out.println(oddsum); //check, delete later
+      System.out.println(tempstring);
+      System.out.println("this is a check");
     }
     
       
@@ -70,28 +75,27 @@ public class CreditCard
      */
   }
   int findType(String cats)
-  {/*
+  {
    {
-   if (cats.substring(0) == 4)
+     if (cats.substring(0) == "4")
    return 2;
-   else if (cats.substring(0,2) == 51 || cats.substring(0,2) == 52 || cats.substring(0,2) == 53 ||cats.substring(0,2) == 54 ||cats.substring(0,2) == 55)
+   else if (cats.substring(0,2) == "51" || cats.substring(0,2) == "52" || cats.substring(0,2) == "53" ||cats.substring(0,2) == "54" ||cats.substring(0,2) == "55")
    return 1;
-   else if (cats.substring(0,4)== 6011)
+   else if (cats.substring(0,4)== "6011")
    return 4;
-   else if (cats.substring(0,2) == 34 || cats.substring(0,2) == 37)
+   else if (cats.substring(0,2) == "34" || cats.substring(0,2) == "37")
    return 3;
-   else if (cats.substring(0,2) == 36 || cats.substring(0,2) ==38)
+   else if (cats.substring(0,2) == "36" || cats.substring(0,2) == "38")
    return 5;
-   else if (cats.substring(0,3) == 300 || cats.substring(0,3) == 301 || cats.substring(0,3) == 302 
-   || cats.substring(0,3) == 303 || cats.substring(0,3) == 304 || cats.substring(0,3) == 305)
+     else if (cats.substring(0,3) == "300" || cats.substring(0,3) == "301" || cats.substring(0,3) == "302" 
+   || cats.substring(0,3) == "303" || cats.substring(0,3) == "304" || cats.substring(0,3) == "305")
    return 5;
    else if (valid ==false)
    return 0;
    else 
    return 0;
    }
-   */
-    return 1;
+  
   }
   
 }

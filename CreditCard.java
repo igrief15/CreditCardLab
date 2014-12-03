@@ -6,7 +6,7 @@ public class CreditCard
   boolean valid = true;
   String verify(String num)
   {
-    if (num.length() < 13 || num.length() > 16)
+    if (num.length() <= 13 || num.length() >= 16)
       valid = false;
     String oddsum = "";
     String evensum = "";
@@ -18,16 +18,15 @@ public class CreditCard
     }
     String tempstring = oddsum;
     oddsum = "";
-    if (tempstring.substring(0,1) == "1" || tempstring.substring(0,1) =="3" || tempstring.substring(0,1) =="5" 
-          || tempstring.substring(0,1) =="7"||tempstring.substring(0,1) =="9")
+    if (tempstring.length() % 2 == 0)
     {
-      for (int j = 0; j < tempstring.length()/2+1; j++){ 
+      for (int j = 0; j < tempstring.length()/2; j++){ 
         oddsum = oddsum + tempstring.substring(j*2,j*2+1); 
       }
     }
     else
     {  
-      for (int j = 0; j < tempstring.length()/2; j++){ 
+      for (int j = 0; j < tempstring.length()/2+1; j++){ 
         oddsum = oddsum + tempstring.substring(j*2,j*2+1); 
       }
     }
@@ -91,7 +90,9 @@ public class CreditCard
   int findType(String cats)
   {
     {
-      if (cats.substring(0) == "4")
+      if (valid == false)
+      return 0;
+      else if (cats.substring(0) == "4")
       return 2;
       else if (cats.substring(0,2) == "51" || cats.substring(0,2) == "52" || cats.substring(0,2) == "53" ||cats.substring(0,2) == "54" ||cats.substring(0,2) == "55")
       return 1;
@@ -104,8 +105,6 @@ public class CreditCard
       else if (cats.substring(0,3) == "300" || cats.substring(0,3) == "301" || cats.substring(0,3) == "302" 
                  || cats.substring(0,3) == "303" || cats.substring(0,3) == "304" || cats.substring(0,3) == "305")
       return 5;
-      else if (valid ==false)
-      return 0;
       else 
       return 0;
     }

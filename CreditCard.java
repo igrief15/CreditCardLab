@@ -3,21 +3,35 @@ import java.util.Scanner;
 
 public class CreditCard
 {
+  boolean valid = true;
   String verify(String num)
   {
-    int a = num.length();
-    int[] numar = new int[a];
+    String oddsum = "";
+    String evensum = "";
+    String oddstr = num;
+    String evenstr = num;
+    for (int i = 0; i < num.length(); i++){ //flips the input, 12345 becomes 54321
+     oddsum = oddsum + oddstr.substring(oddstr.length()-1,oddstr.length());
+     System.out.println(oddsum); //check, delet later
+     oddstr = oddstr.substring(0,oddstr.length()-1); 
+    }
+    String tempstring = oddsum;
+    for (int i = 0; i < oddsum.length(); i++){
+      oddsum = oddsum.substring(i*2,i*2+1); 
+      System.out.println(oddsum); //check, delete later
+    }
+    
+      
+   /* int[] numar = new int[a];
     for (int i = 0; i < num.length(); i++) {
       numar[i] = Integer.valueOf(num.substring(i, i + 1)); //found string parsing stuff online
     }
-    int oddsum = 0;
-    int evensum = 0;
     for (int i = 0; i < numar.length;i++)
     {
       oddsum =+ numar[numar.length - (i + i*2)];
     }
-    
-    System.out.println(oddsum);
+    */
+    System.out.println(oddsum); //check, delete
     return "cat";
    
     
@@ -71,9 +85,13 @@ public class CreditCard
    else if (cats.substring(0,3) == 300 || cats.substring(0,3) == 301 || cats.substring(0,3) == 302 
    || cats.substring(0,3) == 303 || cats.substring(0,3) == 304 || cats.substring(0,3) == 305)
    return 5;
+   else if (valid ==false)
+   return 0;
+   else 
+   return 0;
    }
    */
-    return 420;
+    return 1;
   }
   
 }

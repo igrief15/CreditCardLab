@@ -1,6 +1,13 @@
 // Credit Card verification driver
 
+
 /*
+ Commit to GitHub your best credit card code that uses the provided 
+ Credit Card Driver, and that both verifies any entered credit card number 
+ using Luhn's algorithm and identifies the credit card type (MasterCard, Visa, etc.). 
+ In addition, submit here a URL link to your GitHub directory 
+ and attach a PDF of your complete code.
+
  notes:
  most commonly 16 numbers, but not always 
  

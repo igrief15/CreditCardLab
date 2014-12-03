@@ -8,82 +8,6 @@
  In addition, submit here a URL link to your GitHub directory 
  and attach a PDF of your complete code.
 
- notes:
- most commonly 16 numbers, but not always 
- 
- LUHN CHECK
- right to left
- all the even places, 
- -multiply them by 2 
- --if the product is 2 digits, add the digits together
- --take the sum
- then
- all the odd places,
- -add them together
- then
- add both sums together
- if the sum % 10 == 0, it is a valid number
- 
- 
- 
- 
- TYPE OF CARD
- mastercard = 51-55
- visa = 4
- discover = 6011
- american expresso = 34,37
- the other one = 36,38,300-305
- 
- 
- 
- declare int number, set value as credit card number 
- declare array cats
- input number into array cats via for loop
- if cats[0] == 4 
- its visa
- else if cats[0,2] == 51 || cats[0,2] == 52 || 53 || 54 || 55
- its mastercard
- else if cats[0,4] == 6011 
- its discover
- else if cats[0,2] == 34 || 37
- its amex
- else if cats[0,2] == 36 || 38
- its the other one
- else if cats[0,3] == 300 || 301 || 302 || 303 || 304 || 305
- its also the other
- 
-     int oddsum = 0
- and int evensum = 0
- 
- for loop, int i  ; i < cats.length ; i++
-  oddsum =+ cats[cats.length - (i + i*2)] 
-  
-  something like that
-  
-  
-  int digits
- for loop
-  digits = (cats[cats.length - (i*2)])*2
-  if digits > 9 
-  input into array again and add the values, digits takes that value
-  evensum =+ digits
-  else 
-  evensum =+ digits
-  
-  boolean luhn = false
-  
-  if evensum + oddsum % 10 == 0 
-  luhn = true
-  
-  
-  i know the specifics are wrong i'll figure it out eventually
-  
-  
-  
-  
- 
- 
- 
  
  
  
@@ -104,7 +28,7 @@
  System.out.println("Enter a number to be tested");
  String num = in.next();
  
- System.out.println("is "+num+" a valid credit card number? "+ test.verify(num));
+ System.out.println("is " + num + " a valid credit card number? " + test.verify(num));
  int typeInt = test.findType(num);
  System.out.println(typeInt);
  String[] types = {"none", "Master Card", "Visa", "American Express", "Discover", "Diners Club/ Carte Blanche"};

@@ -14,14 +14,24 @@ public class CreditCard
     String evenstr = num;
     for (int i = 0; i < num.length(); i++){ //flips the input, 12345 becomes 54321
       oddsum = oddsum + oddstr.substring(oddstr.length()-1,oddstr.length());
-      System.out.println(oddsum); //check, delet later
       oddstr = oddstr.substring(0,oddstr.length()-1); 
     }
     String tempstring = oddsum;
     oddsum = "";
-    for (int j = 0; j < tempstring.length()/2+1; j++){ 
-      oddsum = oddsum + tempstring.substring(j*2,j*2+1); 
+    if (tempstring.substring(0,1) == "1" || tempstring.substring(0,1) =="3" || tempstring.substring(0,1) =="5" 
+          || tempstring.substring(0,1) =="7"||tempstring.substring(0,1) =="9")
+    {
+      for (int j = 0; j < tempstring.length()/2+1; j++){ 
+        oddsum = oddsum + tempstring.substring(j*2,j*2+1); 
+      }
     }
+    else
+    {  
+      for (int j = 0; j < tempstring.length()/2; j++){ 
+        oddsum = oddsum + tempstring.substring(j*2,j*2+1); 
+      }
+    }
+    
     for (int b = 0; b < tempstring.length()/2; b++){
       evensum = evensum + tempstring.substring(b*2+1, b*2+2);
     }
